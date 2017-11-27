@@ -134,8 +134,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 var cvar = Math.floor(Math.random() * 6)  
                 bot.sendMessage({
                     to: channelID,
-                    message: auth.canada[cvar],
-                    tts: true
+                    message: auth.canada[cvar]
                 });
             break;
             // !antorus
@@ -164,6 +163,44 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 bot.sendMessage({
                     to: channelID,
                     message: 'Link to sign up to various guild events including raids:\nhttps://docs.google.com/spreadsheets/d/1WVKoy4bHFAhy-p2QiDJZRLFOy4YugBG2-EJ8s8TUf1w/edit?usp=sharing'
+                });
+            break;
+            // !roll
+            case 'roll':
+                if(var1!=auth.clear){
+                    if(!isNaN(var1)){
+                        if(var1>0){
+                            var var2 = Math.round(var1);
+                            var cvar = Math.floor(Math.random() * var2)  
+                            bot.sendMessage({
+                                to: channelID,
+                                message: cvar
+                            });
+                        }
+                    }
+                                  
+                }
+                else{
+                    var cvar = Math.floor(Math.random() * 100) + 1  
+                    bot.sendMessage({
+                        to: channelID,
+                        message: cvar
+                    }); 
+                    
+                }
+            break;
+            // !loot
+            case 'loot':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Download RCLootCouncil here: https://www.curseforge.com/wow/addons/rclootcouncil\nFAQ: http://lowerexpectations.org/loot-council/'
+                });
+            break;
+            // !lc
+            case 'lc':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Download RCLootCouncil here: https://www.curseforge.com/wow/addons/rclootcouncil\nFAQ: http://lowerexpectations.org/loot-council/'
                 });
             break;
 
